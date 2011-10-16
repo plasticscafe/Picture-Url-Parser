@@ -116,13 +116,27 @@ test_datas = [
     },
 ]
 
-import imageurl
-for data in test_datas:
-    res = imageurl.get_all(data['url'])
-    num = len(res)
-    for i in range(num):
-        if res[0][i] != data['result'][i]:
-            print "error: " + res[0][i] + " : " + data['result'][i]
+import unittest 
+import pictureUrlParser as pup
+class testParse(unittest.TestCase):
+    def get_all(self):
+        for data in test_datas:
+            res = pup.get_all(data['url'])
+            self.assert_(0 < len(res), "parse fail :" + data['url'])
+            num = len(res[0])
+            for i in range(num):
+                self.assertEqual(res[0][i], data['result'][i], 
+                        res[0][i] + " : " + data['result'][i])
+
+class testSuiteParse(unittest.TestSuite):
+    def __init__(self):
+        tests = ['get_all']
+        unittest.TestSuite.__init__(self, map(testParse, tests))
+
+if __name__ == '__main__':
+    suite = unittest.TestLoader().loadTestsFromTestCase(testParse)
+    unittest.TextTestRunner(verbosity=2).run(suite)
+                    
 
 
 

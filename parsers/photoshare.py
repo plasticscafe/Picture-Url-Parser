@@ -2,7 +2,7 @@
 ########################################
 import re
 # PhotoShare
-pattern = re.compile("http://www.bcphotoshare.com/photos/\w+/(\w+)/")
+pattern = re.compile("http://www.bcphotoshare.com/photos/\w+/(\w+)")
 def search(text):
     result = []
     items = pattern.findall(text)

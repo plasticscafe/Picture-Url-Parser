@@ -20,6 +20,7 @@ funcs = []
 #########################################
 # Parser for Services
 #########################################
+"""
 import photozo
 funcs.append(photozo.search)
 import twitpic
@@ -44,6 +45,11 @@ import lockers
 funcs.append(lockers.search)
 import instgram
 funcs.append(instgram.search)
+"""
+import parsers
+from parsers import * 
+for parser in parsers.__all__:
+    funcs.append(eval(parser + '.search'))
 
 #########################################
 # Interface
