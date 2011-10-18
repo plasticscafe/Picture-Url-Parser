@@ -20,32 +20,6 @@ funcs = []
 #########################################
 # Parser for Services
 #########################################
-"""
-import photozo
-funcs.append(photozo.search)
-import twitpic
-funcs.append(twitpic.search)
-import mobypicture
-funcs.append(mobypicture.search)
-import yfrog
-funcs.append(yfrog.search)
-import keitaihyakkei
-funcs.append(keitaihyakkei.search)
-import hatenaphotolife
-funcs.append(hatenaphotolife.search)
-import photoshare
-funcs.append(photoshare.search)
-import imgly
-funcs.append(imgly.search)
-import twitgoo
-funcs.append(twitgoo.search)
-import imgur
-funcs.append(imgur.search)
-import lockers
-funcs.append(lockers.search)
-import instgram
-funcs.append(instgram.search)
-"""
 import parsers
 from parsers import * 
 for parser in parsers.__all__:
