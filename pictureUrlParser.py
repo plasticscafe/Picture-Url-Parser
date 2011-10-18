@@ -28,6 +28,14 @@ for parser in parsers.__all__:
 #########################################
 # Interface
 #########################################
+def parse(text):
+    res = []
+    for func in funcs:
+        urls = func(text)
+        if 0 < len(urls):
+            return urls[0]
+    return False
+ 
 def get(text):
     res = []
     for func in funcs:

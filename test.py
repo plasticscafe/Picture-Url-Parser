@@ -119,6 +119,17 @@ test_datas = [
 import unittest 
 import pictureUrlParser as pup
 class testParse(unittest.TestCase):
+    def parse(self):
+        for data in test_datas:
+            res = pup.parse(data['url'])
+            self.assertEqual(res, data['result'][0],
+                        res[0][i] + " : " + data['result'][i])
+    def get(self):
+        for data in test_datas:
+            res = pup.get_all(data['url'])
+            self.assert_(0 < len(res), "parse fail :" + data['url'])
+            self.assertEqual(res[0][0], data['result'][0], 
+                    res[0][0] + " : " + data['result'][0])
     def get_all(self):
         for data in test_datas:
             res = pup.get_all(data['url'])
@@ -130,7 +141,7 @@ class testParse(unittest.TestCase):
 
 class testSuiteParse(unittest.TestSuite):
     def __init__(self):
-        tests = ['get_all']
+        tests = ['get_all','parce']
         unittest.TestSuite.__init__(self, map(testParse, tests))
 
 if __name__ == '__main__':
