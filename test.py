@@ -117,11 +117,11 @@ test_datas = [
 ]
 
 import unittest 
-import pictureUrlParser as pup
+import imgUrlExpand as pup
 class testParse(unittest.TestCase):
-    def parse(self):
+    def expand(self):
         for data in test_datas:
-            res = pup.parse(data['url'])
+            res = pup.expand(data['url'])
             self.assertEqual(res, data['result'][0],
                         res[0][i] + " : " + data['result'][i])
     def get(self):

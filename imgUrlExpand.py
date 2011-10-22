@@ -28,7 +28,7 @@ for parser in parsers.__all__:
 #########################################
 # Interface
 #########################################
-def parse(text):
+def expand(text):
     res = []
     for func in funcs:
         urls = func(text)
