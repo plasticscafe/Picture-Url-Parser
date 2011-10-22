@@ -10,7 +10,7 @@
 test_datas = [
     # フォト蔵
     {
-        'url':'http://photozou.jp/photo/show/784/17561757',
+        'url':'http://photozou.jp/photo/show/784/17561757pp',
         'result':[
             'http://photozou.jp/p/img/17561757',
             'http://photozou.jp/p/thumb/17561757',
@@ -36,7 +36,7 @@ test_datas = [
     },
     # yFrog
     {
-        'url':'http://yfrog.com/6rqkel/',
+        'url':'http://yfrog.com/6rqkel',
         'result':[
             'http://yfrog.com/6rqkel.th.jpg',
         ]
@@ -119,18 +119,18 @@ test_datas = [
 import unittest 
 import imgUrlExpand as pup
 class testParse(unittest.TestCase):
-    def expand(self):
+    def test_expand(self):
         for data in test_datas:
             res = pup.expand(data['url'])
-            self.assertEqual(res, data['result'][0],
-                        res[0][i] + " : " + data['result'][i])
-    def get(self):
+            self.assertEqual(res, data['result'][0])
+
+    def test_get(self):
         for data in test_datas:
             res = pup.get_all(data['url'])
             self.assert_(0 < len(res), "parse fail :" + data['url'])
             self.assertEqual(res[0][0], data['result'][0], 
                     res[0][0] + " : " + data['result'][0])
-    def get_all(self):
+    def test_get_all(self):
         for data in test_datas:
             res = pup.get_all(data['url'])
             self.assert_(0 < len(res), "parse fail :" + data['url'])
@@ -139,14 +139,9 @@ class testParse(unittest.TestCase):
                 self.assertEqual(res[0][i], data['result'][i], 
                         res[0][i] + " : " + data['result'][i])
 
-class testSuiteParse(unittest.TestSuite):
-    def __init__(self):
-        tests = ['get_all','parce']
-        unittest.TestSuite.__init__(self, map(testParse, tests))
-
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(testParse)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.TextTestRunner(verbosity=3).run(suite)
                     
 
 
