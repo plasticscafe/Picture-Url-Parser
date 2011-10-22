@@ -2,7 +2,7 @@
 ########################################
 import re
 # yfrog
-pattern = re.compile("http://yfrog.com/(\w+)/")
+pattern = re.compile("http://yfrog.com/(\w+)")
 def search(text):
     result = []
     items = pattern.findall(text)

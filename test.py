@@ -101,7 +101,7 @@ test_datas = [
             'http://api.plixi.com/api/TPAPI.svc/imagefromurl?size=big&url=http://lockerz.com/s/143934392',
             'http://api.plixi.com/api/TPAPI.svc/imagefromurl?size=medium&url=http://lockerz.com/s/143934392',
             'http://api.plixi.com/api/TPAPI.svc/imagefromurl?size=mobile&url=http://lockerz.com/s/143934392',
-            'http://api.plixi.com/api/TPAPI.svc/imagefromurl?size=samll&url=http://lockerz.com/s/143934392',
+            'http://api.plixi.com/api/TPAPI.svc/imagefromurl?size=small&url=http://lockerz.com/s/143934392',
             'http://api.plixi.com/api/TPAPI.svc/imagefromurl?size=thumbnail&url=http://lockerz.com/s/143934392',
         ]
     },
